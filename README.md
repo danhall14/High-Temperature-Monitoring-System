@@ -12,21 +12,50 @@ The High-Temperature Monitoring System is a cost-effective solution designed to 
 - **PID Control**: Integrates a PID loop for maintaining stable temperature conditions.
 - **Real-Time Display**: Features an LCD for displaying temperature readings and system status.
 
-## Installation
+## Technical Specifications
+- Temperature Range: -200°C to 1350°C
+- Measurement Accuracy: ±0.5°C
+- Sample Rate: 10 Hz
+- Resolution: 0.1°C
+- Response Time: <1 second
+- Power Supply: 5V DC
 
-### Prerequisites
+## Thermocouple Calibration
+The system uses the NIST ITS-90 thermocouple database for K-type thermocouples. This ensures accurate temperature conversion from voltage readings to temperature values.
 
+### Lookup Table Specifications
+- Type: K-type (Chromel–Alumel)
+- Range: -200°C to 1350°C
+- Resolution: 0.1°C
+- Reference Junction: 0°C
+- Voltage Range: -5.891 to 54.886 mV
+
+### Implementation
+The lookup table is implemented as a series of polynomial coefficients for different temperature ranges:
+- -200°C to 0°C
+- 0°C to 500°C
+- 500°C to 1350°C
+  
+## Hardware Requirements
+- RP2040 Microcontroller (Raspberry Pi Pico)
+- ADS1220 24-bit ADC
+- K-type thermocouple
+- LCD1602 Display Module
+- Power Supply Unit (5V)
+- Supporting Components:
+  - Resistors x2 (330Ω)
+  - Capacitors (100 µF)
+  - Connection wires
+  - Breadboard
+
+## Software Requirements
 - Python 3.x
 - MicroPython
-- Required Python libraries: `machine`, `utime`, `_thread`
+- Required Libraries:
+  - `machine`
+  - `utime`
+  - `_thread`
 
-### Hardware Requirements
-
-- RP2040 microcontroller (e.g., Raspberry Pi Pico)
-- ADS1220 ADC
-- K-type thermocouple
-- LCD1602 display
-- Additional components: resistors, capacitors, power supply
 
 ### Setup Instructions
 
