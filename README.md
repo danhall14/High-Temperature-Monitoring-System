@@ -27,7 +27,7 @@ The system uses the NIST ITS-90 thermocouple database for K-type thermocouples. 
 - Type: K-type (Chromel–Alumel)
 - Range: -200°C to 1350°C
 - Resolution: 0.1°C
-- Reference Junction: 0°C
+- Reference Junction: 0°C (achieved through CJC)
 - Voltage Range: -5.891 to 54.886 mV
 
 ### Implementation
